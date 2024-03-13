@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passagem de Dados</title>
+  </head>
+  <div id="data_binding">
+    <h1 v-bind:title="tagMessage">{{message}}</h1>
+    <p>Hello! My name is {{person.name}} and a have {{person.age}} years old!</p>
+    <span v-html="tag"></span>
+  </div>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+      let app = new Vue({
+        el: '#data_binding',
+        data: {
+          message: 'Aula sobre data binding em Vue.js!',
+          person: {
+            name: 'John Doe',
+            age: 30
+          },
+          tag: '<button>Click me!</button>',
+          tagMessage: 'This is a title!'
+        },
+      })
+    </script>
+  </body>
+</html>
