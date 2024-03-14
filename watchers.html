@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watchers</title>
+  </head>
+  <div id="Watchers">
+    <h1>{{ country }}</h1>
+    <input v-model="country" type="text">
+  </div>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+      let app = new Vue({
+        el: '#Watchers',
+        data: {
+          country: 'Brazil',
+        },
+        watch: {
+          country: function(newValue, oldValue) {
+            console.log(`Old value: ${oldValue} | New value: ${newValue}`)
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
