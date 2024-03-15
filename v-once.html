@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretiva v-once</title>
+  </head>
+  <div id="directives">
+    <h1>{{person.name}}</h1>
+    <div v-once>{{person.age}}</div>
+  </div>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+      let app = new Vue({
+        el: '#directives',
+        data: {
+          person: {
+            name: 'Guilherme',
+            age: 28
+          },
+        },
+      })
+    </script>
+  </body>
+</html>

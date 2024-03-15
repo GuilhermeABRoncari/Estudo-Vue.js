@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretiva v-html</title>
+  </head>
+  <div id="directives">
+    <div v-html="headerHTML"></div>
+  </div>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+      let app = new Vue({
+        el: '#directives',
+        data: {
+          headerHTML: `
+          <header style="text-align: center;">
+            <h1>Titulo do cabeçalho</h1>
+            <p>Texto do cabeçalho</p> 
+            <img src="https://via.placeholder.com/150" alt="Imagem do cabeçalho">
+          </header>`
+        },
+      })
+    </script>
+  </body>
+</html>

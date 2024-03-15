@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretiva v-model</title>
+  </head>
+  <div id="directives">
+    <h3 v-bind:style="{fontSize: textSize + 'px'}">Hcode Treinamentos</h3>
+    <input typy="text" placeholder="Digite o tamnho do texto" v-model="textSize"/>
+    <h3 v-bind:style="{ color: textColor }">É nois que voa bruxão...</h3>
+    <input type="text" placeholder="Digite a cor do texto" v-model="textColor"/>
+  </div>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+      let app = new Vue({
+        el: '#directives',
+        data: {
+          textSize: 30,
+          textColor: 'black'
+        },   
+      })
+    </script>
+  </body>
+</html>
