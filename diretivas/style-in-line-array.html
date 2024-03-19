@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilos em linha - array</title>
+  </head>
+  <div id="styles">
+
+    <a href="https://www.alura.com.br" :style="[fontSizeStyle, colorStyle, linkStyle]">Alura</a>
+
+  </div>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+      let app = new Vue({
+        el: '#styles',
+        data: {
+          fontSizeStyle: {
+            fontSize: '30px'
+          },
+          colorStyle: {
+            color: 'blue'
+          },
+          linkStyle: {
+            textDecoration: 'none'
+          }
+        },
+      })
+    </script>
+  </body>
+</html>

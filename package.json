@@ -1,0 +1,23 @@
+{
+  "name": "Vue-Udemy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuilhermeABRoncari/Estudo-Vue.js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GuilhermeABRoncari/Estudo-Vue.js/issues"
+  },
+  "homepage": "https://github.com/GuilhermeABRoncari/Estudo-Vue.js#readme",
+  "dependencies": {
+    "bootstrap": "^4.0.0"
+  }
+}
