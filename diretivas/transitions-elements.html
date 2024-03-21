@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animações CSS - Transições</title>
+    <link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+      .fade-transition-enter, .fade-transition-leave-to {
+        opacity: 0;
+      }
+      .fade-transition-enter-active, .fade-transition-leave-active {
+        transition: opacity 0.3s ease-in-out;
+      }
+    </style>
+  </head>
+  <div id="animations">
+
+    <input type="text" v-model="name" />
+
+    <transition name="fade-transition">
+      <h1 v-if="name.length > 10" key="success" class="alert-success" >Nome válido</h1>
+      <h2 v-else key="fail" class="alert-danger" >Nome incorreto</h2>
+    </transition>
+
+  </div>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+      let app = new Vue({
+        el: '#animations',
+        data: {
+          name: 'Guilherme'
+        },
+      })
+    </script>
+  </body>
+</html>

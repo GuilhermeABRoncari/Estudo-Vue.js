@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animações Customizadas</title>
+    <link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
+  </head>
+  <div id="animations">
+
+    <transition 
+      enter-active-class="animated zoomIn"
+      leave-active-class="animated zoomOutDown"
+    >
+      <h1 v-if="show">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus, quae laudantium esse officia laborum iste ut atque tenetur sequi cupiditate est quasi adipisci velit. Autem minus praesentium maxime animi voluptate?</h1>
+    </transition>
+
+    <button @click="show = !show">OK</button>
+
+  </div>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+      let app = new Vue({
+        el: '#animations',
+        data: {
+          show: true,
+        },
+      })
+    </script>
+  </body>
+</html>
