@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modificadores de teclas do sistemas</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<div id="events">
+
+  <div class="container">
+    <form class="form" @submit.prevent>
+
+  </div>
+  <div class="form-group">
+    <label>Precione as teclas abaixo</label>
+    <input type="text" class="form-control" placeholder="Precione Ctrl" @keydown.ctrl="exec" />
+    <input type="text" class="form-control" placeholder="Precione Alt" @keydown.alt="exec" />
+    <input type="text" class="form-control" placeholder="Precione Shift" @keydown.shift="exec" />
+    <input type="text" class="form-control" placeholder="Precione Meta" @keydown.meta="exec" />
+  </div>
+  </form>
+  <hr>
+  <div class="row">
+    <div class="col" @click.ctrl.exact="toggleClass">1</div>
+    <div class="col" @click.ctrl.exact="toggleClass">2</div>
+    <div class="col" @click.ctrl.exact="toggleClass">3</div>
+    <div class="col" @click.ctrl.exact="toggleClass">4</div>
+  </div>
+</div>
+
+</div>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script>
+    let app = new Vue({
+      el: '#events',
+      data: {
+
+      },
+      methods: {
+        exec(e) {
+          console.log(e.key)
+        },
+        toggleClass(event) {
+          let el = event.target
+          el.classList.contains('bg-info') ? el.classList.remove('bg-info') : el.classList.add('bg-info')
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

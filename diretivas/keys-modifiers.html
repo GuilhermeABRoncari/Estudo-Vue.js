@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teclas - Modificadores</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<div id="events">
+
+  <div class="container">
+    <form class="form" @submit.prevent>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="">Nome</label>
+            <input type="text" class="form-control" name="username" placeholder="Digite seu nome"
+              @keyup.enter="send($event)" />
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="form-group">
+    <label>Precione as teclas abaixo</label>
+    <input type="text" class="form-control" placeholder="Precione Enter" @keyup.enter="exec" />
+    <input type="text" class="form-control" placeholder="Precione Tab" @keydown.tab="exec" />
+    <input type="text" class="form-control" placeholder="Precione Delete" @keyup.delete="exec" />
+    <input type="text" class="form-control" placeholder="Precione Esc" @keyup.esc="exec" />
+    <input type="text" class="form-control" placeholder="Precione Space" @keydown.space="exec" />
+    <input type="text" class="form-control" placeholder="Precione Up" @keyup.up="exec" />
+    <input type="text" class="form-control" placeholder="Precione Down" @keyup.down="exec" />
+    <input type="text" class="form-control" placeholder="Precione Left" @keyup.left="exec" />
+    <input type="text" class="form-control" placeholder="Precione Right" @keyup.right="exec" />
+  </div>
+  </form>
+
+</div>
+
+</div>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script>
+    let app = new Vue({
+      el: '#events',
+      data: {
+
+      },
+      methods: {
+        send(e) {
+          let form = e.target.form
+          let data = new FormData(form)
+          for (let value of data.entries()) {
+            console.log(`${value[0]}: ${value[1]}`)
+          }
+        },
+        alert(message) {
+          window.alert(message)
+        },
+        exec(e) {
+          console.log(e.key)
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
