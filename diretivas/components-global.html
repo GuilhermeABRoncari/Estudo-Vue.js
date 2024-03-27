@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Componentes - Global</title>
+</head>
+
+<div id="Components">
+  <text-render text="Prop passada no componente" title="Componente Vue"></text-render>
+  <text-render text="Sejam bem vindos!"></text-render>
+
+  <hr>
+
+  <list-component></list-component>
+
+</div>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script>
+    Vue.component('text-render', {
+      props: ['text', 'title'],
+      template: `
+        <div>
+          <h1>{{ title }}</h1>
+          <p>{{ text }}</p>
+        </div>
+      `
+    })
+
+    Vue.component('list-component', {
+      template: `
+        <ul>
+          <li v-for="person in names">{{ person }}</li>
+        </ul>
+      `,
+      data: function () {
+        return {
+          names: ['João', 'Maria', 'José']
+        }
+      }
+    })
+
+    let app = new Vue({
+      el: '#Components',
+      data: {
+
+      }
+    })
+  </script>
+</body>
+
+</html>

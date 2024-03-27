@@ -19,6 +19,7 @@
   "homepage": "https://github.com/GuilhermeABRoncari/Estudo-Vue.js#readme",
   "dependencies": {
     "animate.css": "^3.7.2",
-    "bootstrap": "^4.0.0"
+    "bootstrap": "^4.0.0",
+    "vue": "^4.2.2"
   }
 }
