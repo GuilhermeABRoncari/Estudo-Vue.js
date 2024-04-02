@@ -1,15 +1,31 @@
 <template>
   <div id="app">
-    <HcodeHeader/>
+    <HcodeHeader  @select-championship="changeChampionship" />
+    <HcodeSection :championship="championship" />
+    <HcodeFooter />
   </div>
 </template>
 
 <script>
-import HcodeHeader from './components/HcodeHeader.vue'
+import HcodeHeader from './components/HcodeHeader'
+import HcodeFooter from './components/HcodeFooter'
+import HcodeSection from './components/HcodeSection'
 export default {
   name: 'App',
   components: {
-    HcodeHeader
+    HcodeHeader,
+    HcodeFooter,
+    HcodeSection
+  },
+  data() {
+    return {
+      championship: 'Campeonato Brasileiro'
+    }
+  },
+  methods: {
+    changeChampionship(value) {
+      this.championship = value
+    }
   }
 }
 </script>
