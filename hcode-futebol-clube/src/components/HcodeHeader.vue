@@ -14,8 +14,8 @@
           Futebol Clube
         </a>
         <div class="links mr-2">
-          <a href="#" class="btn mr-5">Inicio</a>
-          <a href="#" class="btn mr-5">Times</a>
+          <a href="#" class="btn mr-5" @click.prevent="$emit('change-component', 'home')">Inicio</a>
+          <a href="#" class="btn mr-5" @click.prevent="$emit('change-component', 'news')">Notícias</a>
           <a href="#" class="btn mr-5">Classificações</a>
 
           <select
