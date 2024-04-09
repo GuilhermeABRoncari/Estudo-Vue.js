@@ -4,10 +4,7 @@
       @select-championship="changeChampionship"
       @change-component="changeComponent"
     />
-    <HcodeSection
-      :championship="championship"
-      :current-component="currentSectionComponent"
-    />
+    <HcodeSection/>
     <HcodeFooter />
   </div>
 </template>
@@ -16,6 +13,8 @@
 import HcodeHeader from './components/HcodeHeader'
 import HcodeFooter from './components/HcodeFooter'
 import HcodeSection from './components/HcodeSection'
+import { mapActions } from 'vuex'
+
 export default {
   name: 'App',
   components: {
@@ -25,14 +24,10 @@ export default {
   },
   data() {
     return {
-      championship: 'Campeonato Brasileiro',
-      currentSectionComponent: 'HcodeSectionBanner'
     }
   },
   methods: {
-    changeChampionship(value) {
-      this.championship = value
-    },
+    ...mapActions(['changeChampionship']),
     changeComponent(value) {
       switch (value) {
         case 'home':

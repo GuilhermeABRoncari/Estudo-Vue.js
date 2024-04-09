@@ -14,8 +14,8 @@
           Futebol Clube
         </a>
         <div class="links mr-2">
-          <a href="#" class="btn mr-5" @click.prevent="$emit('change-component', 'home')">Inicio</a>
-          <a href="#" class="btn mr-5" @click.prevent="$emit('change-component', 'news')">Notícias</a>
+          <router-link to="/" class="btn mr-5">Inicio</router-link>
+          <router-link to="/news" class="btn mr-5">Notícias</router-link>
           <a href="#" class="btn mr-5">Classificações</a>
 
           <select
@@ -61,5 +61,9 @@ header {
 .links a:focus {
   outline: none !important;
   box-shadow: none !important;
+}
+.link-active {
+  background-color: #fff;
+  color: #000 !important;
 }
 </style>

@@ -6,15 +6,15 @@
             </div>
         </div>
 
-        <component :is="currentComponent" />
+        <router-view></router-view>
 
         <div class="container">
             <div class="row my-club mt-5">
                 <div class="col-6">
-                    <h2>Seu clube é: {{ myClub }}</h2>
+                    <h2>Seu clube é: {{ clubName }}</h2>
                 </div>
                 <div class="col-6">
-                    <HcodeInput v-model="myClub" />
+                    <HcodeInput  />
                 </div>
             </div>
         </div>
@@ -22,23 +22,23 @@
 </template>
 
 <script>
-import HcodeSectionBanner from './HcodeSectionBanner'
 import HcodeInput from './HcodeInput'
+import { mapGetters } from 'vuex'
+// import { mapState } from 'vuex'
 
 export default {
     components: {
-        HcodeSectionBanner,
-        HcodeSectionNews: () => import('./HcodeSectionNews'),
         HcodeInput
     },
     props: {
-        championship: String,
         currentComponent: String,
     },
-    data() {
-        return {
-            myClub: 'Hcode Treinamentos'
-        }
+    //computed: mapState(['championship', 'clubName']),
+    computed: {
+        ...mapGetters({
+            championship: 'getChampionship',
+            clubName: 'getClubName'
+        })
     }
 }
 </script>
