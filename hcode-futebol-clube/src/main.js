@@ -11,6 +11,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 Vue.use(Vue2Filters);
 Vue.config.productionTip = false;
 
+/* Global Guards
+router.beforeEach((to, from, next) => {
+  console.log("to", to);
+  console.log("from", from);
+  next();
+});
+router.afterEach(() => {
+  console.log("afterEach");
+});
+*/
+
 new Vue({
   render: (h) => h(App),
   store,
